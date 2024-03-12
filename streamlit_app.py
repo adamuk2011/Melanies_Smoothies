@@ -35,7 +35,7 @@ if ingredients_list:
         ingredients_string += fruit_chosen + ' '
         #st.write(ingredients_string)
         fruityvice_response = requests.get("https://fruityvice.com/api/fruit/"+ fruit_chosen +")"
-        st.write(fruityvice_response.json())
+        st.text(fruityvice_response.json())
         fv_df=st.dataframe(data=fruityvice_response.json(),use_container_width=True)
 
     my_insert_stmn = """ insert into smoothies.public.orders (ingredients,name_on_order)
